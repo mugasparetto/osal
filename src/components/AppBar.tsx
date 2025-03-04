@@ -13,7 +13,19 @@ import IconButton from '@mui/material/IconButton';
 import Divider, { dividerClasses } from '@mui/material/Divider';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
-import { useColorScheme } from '@mui/material/styles';
+import {
+  useColorScheme,
+  createTheme,
+  ThemeProvider,
+} from '@mui/material/styles';
+
+// Create a dark theme specifically for this component
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+  colorSchemes: { dark: true },
+});
 
 export default function MainAppBar() {
   const pathname = usePathname();
@@ -25,39 +37,40 @@ export default function MainAppBar() {
   }, [mode]);
 
   return (
-    <Box
-      sx={{
-        flexGrow: 1,
-        [`& .${dividerClasses.root}`]: {
-          mx: 2,
-        },
-      }}
-    >
-      {/* TODO: fix app bar color for light theme - it hides the tabs */}
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Open Source Arms Library
-          </Typography>
-          <Tabs value={pathname} role="navigation">
-            <Tab component={Link} href="/" label="weapon system" value="/" />
-            <Tab
-              component={Link}
-              href="/advanced-search"
-              label="Advanced Search"
-              value="/advanced-search"
-            />
-          </Tabs>
-          {mode != null && (
-            <>
-              <Divider orientation="vertical" flexItem />
-              <IconButton onClick={handleModeClick}>
-                {mode === 'dark' ? <DarkModeIcon /> : <LightModeIcon />}
-              </IconButton>
-            </>
-          )}
-        </Toolbar>
-      </AppBar>
-    </Box>
+    <ThemeProvider theme={darkTheme}>
+      <Box
+        sx={{
+          flexGrow: 1,
+          [`& .${dividerClasses.root}`]: {
+            mx: 2,
+          },
+        }}
+      >
+        <AppBar position="static">
+          <Toolbar>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+              Open Source Arms Library
+            </Typography>
+            <Tabs value={pathname} role="navigation">
+              <Tab component={Link} href="/" label="weapon system" value="/" />
+              <Tab
+                component={Link}
+                href="/advanced-search"
+                label="Advanced Search"
+                value="/advanced-search"
+              />
+            </Tabs>
+            {mode != null && (
+              <>
+                <Divider orientation="vertical" flexItem />
+                <IconButton onClick={handleModeClick}>
+                  {mode === 'dark' ? <DarkModeIcon /> : <LightModeIcon />}
+                </IconButton>
+              </>
+            )}
+          </Toolbar>
+        </AppBar>
+      </Box>
+    </ThemeProvider>
   );
 }
