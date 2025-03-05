@@ -73,9 +73,6 @@ export default function MainAppBar() {
     </Box>
   );
 
-  const container =
-    window !== undefined ? () => window.document.body : undefined;
-
   return (
     <ThemeProvider theme={darkTheme}>
       <Box
@@ -136,7 +133,6 @@ export default function MainAppBar() {
         </AppBar>
         <nav>
           <Drawer
-            container={container}
             variant="temporary"
             anchor="right"
             open={mobileOpen}

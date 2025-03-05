@@ -1,6 +1,7 @@
 'use client';
 import * as React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
@@ -10,15 +11,20 @@ import { styled } from '@mui/material/styles';
 
 import { weapons } from '@/data';
 
-const GridItem = styled(Box)`
+const GridItem = styled(Link)`
+  display: block;
   position: relative;
   width: 100%;
   height: 220px;
-  overflow: hidden;
+  text-decoration: none;
   transition: transform 0.3s ease-out;
 
   &:hover {
     transform: translateY(-0.25rem) scale(1.02);
+  }
+
+  &:visited {
+    color: inherit;
   }
 
   &::before {
@@ -71,14 +77,13 @@ export default function Home() {
       <Box sx={{ flexGrow: 1, mt: 6 }}>
         <Grid container columns={{ xs: 4, md: 12 }} spacing={3}>
           {weapons.map((weapon) => (
-            <Grid size={{ xs: 4, sm: 2, md: 4, lg: 3 }}>
-              <GridItem key={weapon.id}>
+            <Grid key={weapon.id} size={{ xs: 4, sm: 2, md: 4, lg: 3 }}>
+              <GridItem href="/">
                 <Image
                   src={weapon.image}
                   alt={weapon.title}
                   fill={true}
                   style={{ objectFit: 'cover' }}
-                  s
                 />
                 <Typography variant="h6">{weapon.title}</Typography>
               </GridItem>
