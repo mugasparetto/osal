@@ -47,6 +47,7 @@ const GridItem = styled(Link)`
     bottom: 1rem;
     left: 1rem;
     max-width: calc(100% - 2rem);
+    color: white;
   }
 `;
 
