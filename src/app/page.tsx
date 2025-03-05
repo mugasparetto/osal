@@ -69,9 +69,9 @@ export default function Home() {
       </Box>
 
       <Box sx={{ flexGrow: 1, mt: 6 }}>
-        <Grid container spacing={3}>
+        <Grid container columns={{ xs: 4, md: 12 }} spacing={3}>
           {weapons.map((weapon) => (
-            <Grid size={3}>
+            <Grid size={{ xs: 4, sm: 2, md: 4, lg: 3 }}>
               <GridItem key={weapon.id}>
                 <Image
                   src={weapon.image}
