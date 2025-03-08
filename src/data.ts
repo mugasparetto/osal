@@ -288,3 +288,5 @@ export const weapons = [
     ],
   },
 ];
+
+export const fetchWeaponData = (id: string) => weapons.find(weapon => weapon.id === id)

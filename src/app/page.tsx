@@ -79,7 +79,7 @@ export default function Home() {
         <Grid container columns={{ xs: 4, md: 12 }} spacing={3}>
           {weapons.map((weapon) => (
             <Grid key={weapon.id} size={{ xs: 4, sm: 2, md: 4, lg: 3 }}>
-              <GridItem href="/">
+              <GridItem href={`/weapon-system/${weapon.id}`}>
                 <Image
                   src={weapon.image}
                   alt={weapon.title}
