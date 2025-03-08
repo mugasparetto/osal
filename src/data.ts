@@ -92,7 +92,7 @@ export const weapons: Weapon[] = [
     title: 'GBU-39 Small Diameter Bomb',
     image: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
     description:
-      'The Hellfire AGM-114 missile, made by Lockheed Martin, is a laser-guided anti-tank missile meant to be fired from helicopters and drones. They are qualified for use on Israeli-used aircraft such as the Boeing AH-64 Apache and the Sikorsky UH-60 Black Hawk.There are different variants of Hellfire missiles. Main- stream media and pundits have criticized Russia for its use of thermobaric weapons in Ukraine. Similar weaponry is also used in Gaza .',
+      'The GBU-39 Small Diameter Bomb, made by Lockheed Martin, is a laser-guided anti-tank missile meant to be fired from helicopters and drones. They are qualified for use on Israeli-used aircraft such as the Boeing AH-64 Apache and the Sikorsky UH-60 Black Hawk.There are different variants of Hellfire missiles. Main- stream media and pundits have criticized Russia for its use of thermobaric weapons in Ukraine. Similar weaponry is also used in Gaza .',
     components: [
       {
         id: 'c1',
@@ -164,7 +164,7 @@ export const weapons: Weapon[] = [
     title: 'Joint Light Tactical Vehicle',
     image: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
     description:
-      'The Hellfire AGM-114 missile, made by Lockheed Martin, is a laser-guided anti-tank missile meant to be fired from helicopters and drones. They are qualified for use on Israeli-used aircraft such as the Boeing AH-64 Apache and the Sikorsky UH-60 Black Hawk.There are different variants of Hellfire missiles. Main- stream media and pundits have criticized Russia for its use of thermobaric weapons in Ukraine. Similar weaponry is also used in Gaza .',
+      'The Joint Light Tactical Vehicle, made by Lockheed Martin, is a laser-guided anti-tank missile meant to be fired from helicopters and drones. They are qualified for use on Israeli-used aircraft such as the Boeing AH-64 Apache and the Sikorsky UH-60 Black Hawk.There are different variants of Hellfire missiles. Main- stream media and pundits have criticized Russia for its use of thermobaric weapons in Ukraine. Similar weaponry is also used in Gaza .',
     components: [
       {
         id: 'c1',
@@ -236,7 +236,7 @@ export const weapons: Weapon[] = [
     title: 'F-45',
     image: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
     description:
-      'The Hellfire AGM-114 missile, made by Lockheed Martin, is a laser-guided anti-tank missile meant to be fired from helicopters and drones. They are qualified for use on Israeli-used aircraft such as the Boeing AH-64 Apache and the Sikorsky UH-60 Black Hawk.There are different variants of Hellfire missiles. Main- stream media and pundits have criticized Russia for its use of thermobaric weapons in Ukraine. Similar weaponry is also used in Gaza .',
+      'The F-45 wings, made by Lockheed Martin, is a laser-guided anti-tank missile meant to be fired from helicopters and drones. They are qualified for use on Israeli-used aircraft such as the Boeing AH-64 Apache and the Sikorsky UH-60 Black Hawk.There are different variants of Hellfire missiles. Main- stream media and pundits have criticized Russia for its use of thermobaric weapons in Ukraine. Similar weaponry is also used in Gaza .',
     components: [
       {
         id: 'c1',

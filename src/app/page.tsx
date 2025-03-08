@@ -10,44 +10,14 @@ import Grid from '@mui/material/Grid2';
 import { styled } from '@mui/material/styles';
 
 import { weapons } from '@/data';
+import ImageWithTitle from '@/components/ImageWithTitle';
 
 const GridItem = styled(Link)`
-  display: block;
-  position: relative;
-  width: 100%;
-  height: 220px;
-  text-decoration: none;
-  transition: transform 0.3s ease-out;
+display: block;
+transition: transform 0.3s ease-out;
 
   &:hover {
     transform: translateY(-0.25rem) scale(1.02);
-  }
-
-  &:visited {
-    color: inherit;
-  }
-
-  &::before {
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 1;
-    background: rgb(0, 0, 0);
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0) 34%,
-      rgba(0, 0, 0, 0.64) 100%
-    );
-  }
-
-  h6 {
-    position: absolute;
-    z-index: 5;
-    bottom: 1rem;
-    left: 1rem;
-    max-width: calc(100% - 2rem);
-    color: white;
   }
 `;
 
@@ -80,13 +50,7 @@ export default function Home() {
           {weapons.map((weapon) => (
             <Grid key={weapon.id} size={{ xs: 4, sm: 2, md: 4, lg: 3 }}>
               <GridItem href={`/weapon-system/${weapon.id}`}>
-                <Image
-                  src={weapon.image}
-                  alt={weapon.title}
-                  fill={true}
-                  style={{ objectFit: 'cover' }}
-                />
-                <Typography variant="h6">{weapon.title}</Typography>
+                <ImageWithTitle weapon={weapon} />
               </GridItem>
             </Grid>
           ))}

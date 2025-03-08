@@ -9,5 +9,5 @@ export default async function Page({ params, }: {
     const weapon = fetchWeaponData(id);
 
     // Pass the fetched data as props to the client component
-    return <ClientPage weapon={weapon!} />;
+    return <ClientPage initialWeapon={weapon!} />;
 }
