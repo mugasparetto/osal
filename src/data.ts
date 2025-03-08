@@ -1,4 +1,20 @@
-export const weapons = [
+export interface Weapon {
+  id: string;
+  title: string;
+  image: string;
+  description: string;
+  components: Component[];
+}
+
+export interface Component {
+  id: string;
+  title: string;
+  country: string;
+  company: string;
+  location: string;
+}
+
+export const weapons: Weapon[] = [
   {
     id: 'w1',
     title: 'Hellfire Missile',

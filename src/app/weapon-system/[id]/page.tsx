@@ -1,11 +1,13 @@
-import * as React from 'react';
 import { fetchWeaponData } from '@/data';
+
+import ClientPage from './ClientPage';
 
 export default async function Page({ params, }: {
     params: Promise<{ id: string }>
 }) {
-    const { id } = await params
-    const weapon = fetchWeaponData(id)
+    const { id } = await params;
+    const weapon = fetchWeaponData(id);
 
-    return <div>{weapon?.title}</div>
+    // Pass the fetched data as props to the client component
+    return <ClientPage weapon={weapon!} />;
 }
