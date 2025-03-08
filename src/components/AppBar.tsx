@@ -5,14 +5,16 @@ import Link from 'next/link';
 
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import Divider, { dividerClasses } from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemText from '@mui/material/ListItemText';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -42,7 +44,6 @@ const Logo = styled(Link)`
 `;
 
 export default function MainAppBar() {
-  const pathname = usePathname();
   const { mode, setMode } = useColorScheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -61,7 +62,19 @@ export default function MainAppBar() {
         Menu
       </Typography>
       <Divider />
-      <Tabs value={pathname} role="navigation" orientation="vertical">
+      <List>
+        <ListItem disablePadding component={Link} href="/" sx={{ color: "#fff" }}>
+          <ListItemButton sx={{ textAlign: 'center', textTransform: "uppercase" }}>
+            <ListItemText primary="Weapon system" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding component={Link} href="/advanced-search" sx={{ color: "#fff" }}>
+          <ListItemButton sx={{ textAlign: 'center', textTransform: "uppercase" }}>
+            <ListItemText primary="Advanced search" />
+          </ListItemButton>
+        </ListItem>
+      </List>
+      {/* <Tabs value={pathname} role="navigation" orientation="vertical">
         <Tab component={Link} href="/" label="weapon system" value="/" />
         <Tab
           component={Link}
@@ -69,7 +82,7 @@ export default function MainAppBar() {
           label="Advanced Search"
           value="/advanced-search"
         />
-      </Tabs>
+      </Tabs> */}
     </Box>
   );
 
@@ -101,19 +114,12 @@ export default function MainAppBar() {
             >
               OSAL
             </Typography>
-            <Tabs
-              value={pathname}
-              role="navigation"
-              sx={{ display: { xs: 'none', sm: 'block' } }}
-            >
-              <Tab component={Link} href="/" label="weapon system" value="/" />
-              <Tab
-                component={Link}
-                href="/advanced-search"
-                label="Advanced Search"
-                value="/advanced-search"
-              />
-            </Tabs>
+            <Button component={Link} href="/" sx={{ color: "#ffffff", display: { xs: 'none', sm: 'block' } }}>
+              weapon system
+            </Button>
+            <Button component={Link} href="/advanced-search" sx={{ color: "#ffffff", display: { xs: 'none', sm: 'block' } }}>
+              Advanced Search
+            </Button>
             <IconButton
               edge="start"
               onClick={handleDrawerToggle}
