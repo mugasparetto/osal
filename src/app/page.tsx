@@ -1,6 +1,5 @@
 'use client';
 import * as React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 
 import Container from '@mui/material/Container';
@@ -10,11 +9,12 @@ import Grid from '@mui/material/Grid2';
 import { styled } from '@mui/material/styles';
 
 import { weapons } from '@/data';
+import { archivoNarrow } from '@/theme';
 import ImageWithTitle from '@/components/ImageWithTitle';
 
 const GridItem = styled(Link)`
-display: block;
-transition: transform 0.3s ease-out;
+  display: block;
+  transition: transform 0.3s ease-out;
 
   &:hover {
     transform: translateY(-0.25rem) scale(1.02);
@@ -27,19 +27,24 @@ export default function Home() {
       <Box
         sx={{
           my: 4,
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
         }}
       >
-        <Typography variant="h4" component="h1" gutterBottom>
+        <Typography
+          variant="h4"
+          component="h1"
+          gutterBottom
+          sx={{
+            fontFamily: archivoNarrow.style.fontFamily,
+            fontWeight: 600,
+            textTransform: 'uppercase',
+          }}
+        >
           Searching by Weapon System
         </Typography>
         <Typography variant="body1" component="p">
           Choose a weapon system to explore its supply chain.
         </Typography>
-        <Typography variant="body1" component="p" sx={{ textAlign: 'center' }}>
+        <Typography variant="body1" component="p">
           Search by “location” if you want to learn what sub-components are made
           in your neighborhood.
         </Typography>
