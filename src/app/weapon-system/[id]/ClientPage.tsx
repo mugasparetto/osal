@@ -42,18 +42,29 @@ export default function ClientPage({ initialWeapon }: ClientPageProps) {
 
   const columns: GridColDef<typeof rows[number]>[] = React.useMemo(
     () => [
-      { field: 'component', headerName: 'Component' },
+      {
+        field: 'component',
+        headerName: 'Component',
+        disableColumnMenu: true,
+        flex: 1,
+      },
       {
         field: 'country',
         headerName: 'Country',
+        disableColumnMenu: true,
+        flex: 1,
       },
       {
         field: 'companies',
         headerName: 'Companies',
+        disableColumnMenu: true,
+        flex: 1,
       },
       {
         field: 'location',
         headerName: 'Location',
+        disableColumnMenu: true,
+        flex: 1,
       },
     ],
     []
