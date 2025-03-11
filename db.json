@@ -1,0 +1,351 @@
+{
+  "weapons": [
+    {
+      "id": 1,
+      "title": "Hellfire Missile",
+      "image": "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+      "description": "The Hellfire AGM-114 missile, made by Lockheed Martin, is a laser-guided anti-tank missile meant to be fired from helicopters and drones. They are qualified for use on Israeli-used aircraft such as the Boeing AH-64 Apache and the Sikorsky UH-60 Black Hawk. There are different variants of Hellfire missiles. Mainstream media and pundits have criticized Russia for its use of thermobaric weapons in Ukraine. Similar weaponry is also used in Gaza."
+    },
+    {
+      "id": 2,
+      "title": "Joint Direct Attack Munition (JDAM)",
+      "image": "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
+      "description": "The JDAM is a guidance kit developed by Boeing that converts unguided bombs into all-weather precision-guided munitions. The system uses GPS to improve accuracy and is used by multiple air forces, including the Israeli Air Force."
+    },
+    {
+      "id": 3,
+      "title": "F-16 Fighting Falcon",
+      "image": "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
+      "description": "A multirole fighter aircraft developed by General Dynamics and widely used worldwide. The F-16 is known for its maneuverability and advanced avionics. Israel operates a fleet of F-16s, often modified for specific combat needs."
+    },
+    {
+      "id": 4,
+      "title": "Merkava Tank",
+      "image": "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c",
+      "description": "The Merkava is the main battle tank used by the Israel Defense Forces (IDF). It is known for its emphasis on crew protection and firepower. The latest model, the Merkava Mk4, features advanced armor and active protection systems."
+    },
+    {
+      "id": 5,
+      "title": "Iron Dome",
+      "image": "https://images.unsplash.com/photo-1740507619572-ac180ca2630f",
+      "description": "An advanced missile defense system developed by Israel to intercept short-range rockets and artillery shells. It has been credited with intercepting thousands of incoming projectiles."
+    },
+    {
+      "id": 6,
+      "title": "Spike Missile",
+      "image": "https://images.unsplash.com/photo-1741017269648-44a2497aba20",
+      "description": "A family of fire-and-forget anti-tank guided missiles developed by Israel's Rafael Advanced Defense Systems. The Spike missile is widely used and exported to numerous countries."
+    },
+    {
+      "id": 7,
+      "title": "Apache Helicopter",
+      "image": "https://images.unsplash.com/photo-1735615479436-6a697c3e0d48",
+      "description": "The Boeing AH-64 Apache is an advanced attack helicopter used by the IDF. It is heavily armed with Hellfire missiles, a 30mm chain gun, and Hydra 70 rockets."
+    },
+    {
+      "id": 8,
+      "title": "DIME Bombs",
+      "image": "https://images.unsplash.com/photo-1741192223245-46cbbe8ae332",
+      "description": "Dense Inert Metal Explosives (DIME) are controversial munitions believed to cause severe injuries with limited blast radii. Reports suggest their use in conflict zones, raising ethical and humanitarian concerns."
+    },
+    {
+      "id": 9,
+      "title": "White Phosphorus",
+      "image": "https://plus.unsplash.com/premium_photo-1714115035000-023149febb01",
+      "description": "A controversial incendiary weapon used for battlefield illumination and smoke screens. Its use in populated areas is highly criticized due to its severe burns and long-lasting effects."
+    },
+    {
+      "id": 10,
+      "title": "F-35 Lightning II",
+      "image": "https://images.unsplash.com/photo-1734779206719-864dbdae36d6",
+      "description": "A fifth-generation stealth fighter jet used by the Israeli Air Force. The F-35 provides advanced radar evasion capabilities and state-of-the-art avionics for precision strikes."
+    },
+    {
+      "id": 11,
+      "title": "GBU-39 Small Diameter Bomb",
+      "image": "https://images.unsplash.com/photo-1740938331134-d347f9ee3431",
+      "description": "A precision-guided glide bomb designed for high accuracy with minimal collateral damage. It has been used in various conflicts, including airstrikes in Gaza."
+    },
+    {
+      "id": 12,
+      "title": "Tavor Assault Rifle",
+      "image": "https://images.unsplash.com/photo-1741091475787-8cf779895451",
+      "description": "A modern Israeli-made assault rifle used by the IDF. The Tavor is designed for urban warfare with a compact, ergonomic bullpup configuration."
+    }
+  ],
+  "components": [
+    {
+      "id": "1",
+      "title": "Thermal Battery",
+      "country": "United States",
+      "company": "EaglePitcher LLC",
+      "location": "Joplin, MO",
+      "weaponId": "1"
+    },
+    {
+      "id": "2",
+      "title": "Missile Guidance System",
+      "country": "United States",
+      "company": "Raytheon Technologies",
+      "location": "Tucson, AZ",
+      "weaponId": "1"
+    },
+    {
+      "id": "3",
+      "title": "Rocket Motor",
+      "country": "United States",
+      "company": "Aerojet Rocketdyne",
+      "location": "Sacramento, CA",
+      "weaponId": "1"
+    },
+    {
+      "id": "4",
+      "title": "Seeker Head",
+      "country": "United States",
+      "company": "BAE Systems",
+      "location": "Nashua, NH",
+      "weaponId": "1"
+    },
+    {
+      "id": "5",
+      "title": "Warhead",
+      "country": "United States",
+      "company": "Northrop Grumman",
+      "location": "Redondo Beach, CA",
+      "weaponId": "1"
+    },
+    {
+      "id": "6",
+      "title": "Control Fins",
+      "country": "United States",
+      "company": "Lockheed Martin",
+      "location": "Orlando, FL",
+      "weaponId": "1"
+    },
+    {
+      "id": "7",
+      "title": "Propellant",
+      "country": "United States",
+      "company": "General Dynamics Ordnance",
+      "location": "Saint Petersburg, FL",
+      "weaponId": "1"
+    },
+    {
+      "id": "8",
+      "title": "Launch Tube",
+      "country": "United States",
+      "company": "SAIC",
+      "location": "McLean, VA",
+      "weaponId": "1"
+    },
+    {
+      "id": "9",
+      "title": "Infrared Sensor",
+      "country": "United States",
+      "company": "Raytheon Technologies",
+      "location": "Goleta, CA",
+      "weaponId": "1"
+    },
+    {
+      "id": "10",
+      "title": "Targeting Software",
+      "country": "United States",
+      "company": "BAE Systems",
+      "location": "Endicott, NY",
+      "weaponId": "1"
+    },
+    {
+      "id": "11",
+      "title": "Communication System",
+      "country": "United States",
+      "company": "Harris Corporation",
+      "location": "Melbourne, FL",
+      "weaponId": "1"
+    },
+    {
+      "id": "12",
+      "title": "Missile Body Casing",
+      "country": "United States",
+      "company": "Orbital ATK",
+      "location": "Dulles, VA",
+      "weaponId": "1"
+    },
+
+    {
+      "id": "13",
+      "title": "GPS Receiver",
+      "country": "United States",
+      "company": "Rockwell Collins",
+      "location": "Cedar Rapids, IA",
+      "weaponId": "2"
+    },
+    {
+      "id": "14",
+      "title": "Inertial Measurement Unit",
+      "country": "United States",
+      "company": "Honeywell",
+      "location": "Phoenix, AZ",
+      "weaponId": "2"
+    },
+    {
+      "id": "15",
+      "title": "Control Guidance Electronics",
+      "country": "United States",
+      "company": "Raytheon Technologies",
+      "location": "Tucson, AZ",
+      "weaponId": "2"
+    },
+    {
+      "id": "16",
+      "title": "Tail Kit Assembly",
+      "country": "United States",
+      "company": "Boeing",
+      "location": "St. Charles, MO",
+      "weaponId": "2"
+    },
+    {
+      "id": "17",
+      "title": "Fuze System",
+      "country": "United States",
+      "company": "L3Harris",
+      "location": "Melbourne, FL",
+      "weaponId": "2"
+    },
+    {
+      "id": "18",
+      "title": "Satellite Communication Module",
+      "country": "United States",
+      "company": "Lockheed Martin",
+      "location": "Littleton, CO",
+      "weaponId": "2"
+    },
+    {
+      "id": "19",
+      "title": "Impact Sensor",
+      "country": "United States",
+      "company": "Northrop Grumman",
+      "location": "Chandler, AZ",
+      "weaponId": "2"
+    },
+    {
+      "id": "20",
+      "title": "Smart Bomb Processor",
+      "country": "United States",
+      "company": "General Dynamics",
+      "location": "Falls Church, VA",
+      "weaponId": "2"
+    },
+    {
+      "id": "21",
+      "title": "Blast Fragmentation Warhead",
+      "country": "United States",
+      "company": "Dynetics",
+      "location": "Huntsville, AL",
+      "weaponId": "2"
+    },
+    {
+      "id": "22",
+      "title": "Navigation Antenna",
+      "country": "United States",
+      "company": "BAE Systems",
+      "location": "Austin, TX",
+      "weaponId": "2"
+    },
+    {
+      "id": "23",
+      "title": "Electronic Warfare Protection",
+      "country": "United States",
+      "company": "Raytheon Technologies",
+      "location": "El Segundo, CA",
+      "weaponId": "2"
+    },
+    {
+      "id": "24",
+      "title": "Missile Frame",
+      "country": "United States",
+      "company": "Orbital ATK",
+      "location": "Dulles, VA",
+      "weaponId": "2"
+    },
+    {
+      "id": "25",
+      "title": "Placeholder",
+      "country": "Placeholder",
+      "company": "Placeholder",
+      "location": "Placeholder",
+      "weaponId": "3"
+    },
+    {
+      "id": "26",
+      "title": "Placeholder",
+      "country": "Placeholder",
+      "company": "Placeholder",
+      "location": "Placeholder",
+      "weaponId": "4"
+    },
+    {
+      "id": "27",
+      "title": "Placeholder",
+      "country": "Placeholder",
+      "company": "Placeholder",
+      "location": "Placeholder",
+      "weaponId": "5"
+    },
+    {
+      "id": "28",
+      "title": "Placeholder",
+      "country": "Placeholder",
+      "company": "Placeholder",
+      "location": "Placeholder",
+      "weaponId": "6"
+    },
+    {
+      "id": "29",
+      "title": "Placeholder",
+      "country": "Placeholder",
+      "company": "Placeholder",
+      "location": "Placeholder",
+      "weaponId": "7"
+    },
+    {
+      "id": "30",
+      "title": "Placeholder",
+      "country": "Placeholder",
+      "company": "Placeholder",
+      "location": "Placeholder",
+      "weaponId": "8"
+    },
+    {
+      "id": "31",
+      "title": "Placeholder",
+      "country": "Placeholder",
+      "company": "Placeholder",
+      "location": "Placeholder",
+      "weaponId": "9"
+    },
+    {
+      "id": "32",
+      "title": "Placeholder",
+      "country": "Placeholder",
+      "company": "Placeholder",
+      "location": "Placeholder",
+      "weaponId": "10"
+    },
+    {
+      "id": "33",
+      "title": "Placeholder",
+      "country": "Placeholder",
+      "company": "Placeholder",
+      "location": "Placeholder",
+      "weaponId": "11"
+    },
+    {
+      "id": "34",
+      "title": "Placeholder",
+      "country": "Placeholder",
+      "company": "Placeholder",
+      "location": "Placeholder",
+      "weaponId": "12"
+    }
+  ]
+}
