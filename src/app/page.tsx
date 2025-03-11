@@ -9,7 +9,6 @@ import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid2';
 
 import { styled } from '@mui/material/styles';
-import { grey } from '@mui/material/colors';
 
 import { weapons } from '@/data';
 import { archivoNarrow } from '@/theme';
@@ -59,10 +58,10 @@ export default function Home() {
             Advanced Search
           </Button>
         </Box>
-        <Typography variant="body1" component="p" sx={{ color: grey[700] }}>
+        <Typography variant="body1" component="p">
           Choose a weapon system to explore its supply chain.
         </Typography>
-        <Typography variant="body1" component="p" sx={{ color: grey[700] }}>
+        <Typography variant="body1" component="p">
           Search by “location” if you want to learn what sub-components are made
           in your neighborhood.
         </Typography>

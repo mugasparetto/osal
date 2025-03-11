@@ -1,8 +1,10 @@
 'use client';
 import * as React from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Container from '@mui/material/Container';
@@ -15,6 +17,7 @@ import Typography from '@mui/material/Typography';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 
 import { Weapon, weapons } from '@/data';
+import { archivoNarrow } from '@/theme';
 import ImageWithTitle from '@/components/ImageWithTitle';
 
 interface ClientPageProps {
@@ -112,8 +115,33 @@ export default function ClientPage({ initialWeapon }: ClientPageProps) {
         </Grid>
         <Grid size={8} sx={{ display: 'flex', flexDirection: 'column' }}>
           <Box sx={{ mb: 3 }}>
-            <Typography variant="h6">Searching by Weapon System</Typography>
-            <Typography variant="body2" component="p" sx={{ my: 1 }}>
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                mb: 1,
+              }}
+            >
+              <Typography
+                variant="h5"
+                sx={{
+                  fontFamily: archivoNarrow.style.fontFamily,
+                  fontWeight: 600,
+                  textTransform: 'uppercase',
+                }}
+              >
+                Searching by Weapon System
+              </Typography>
+              <Button
+                variant="contained"
+                LinkComponent={Link}
+                href="advanced-search"
+              >
+                Advanced Search
+              </Button>
+            </Box>
+            <Typography variant="body2" component="p">
               Choose a weapon system to explore its supply chain.
             </Typography>
             <Typography variant="body2" component="p">
