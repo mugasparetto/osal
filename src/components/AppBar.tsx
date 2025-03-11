@@ -62,13 +62,27 @@ export default function MainAppBar() {
       </Typography>
       <Divider />
       <List>
-        <ListItem disablePadding component={Link} href="/" sx={{ color: "#fff" }}>
-          <ListItemButton sx={{ textAlign: 'center', textTransform: "uppercase" }}>
+        <ListItem
+          disablePadding
+          component={Link}
+          href="/"
+          sx={{ color: '#fff' }}
+        >
+          <ListItemButton
+            sx={{ textAlign: 'center', textTransform: 'uppercase' }}
+          >
             <ListItemText primary="Weapon system" />
           </ListItemButton>
         </ListItem>
-        <ListItem disablePadding component={Link} href="/advanced-search" sx={{ color: "#fff" }}>
-          <ListItemButton sx={{ textAlign: 'center', textTransform: "uppercase" }}>
+        <ListItem
+          disablePadding
+          component={Link}
+          href="/advanced-search"
+          sx={{ color: '#fff' }}
+        >
+          <ListItemButton
+            sx={{ textAlign: 'center', textTransform: 'uppercase' }}
+          >
             <ListItemText primary="Advanced search" />
           </ListItemButton>
         </ListItem>
@@ -89,7 +103,6 @@ export default function MainAppBar() {
     <ThemeProvider theme={darkTheme}>
       <Box
         sx={{
-          flexGrow: 1,
           [`& .${dividerClasses.root}`]: {
             mx: 2,
           },
@@ -113,10 +126,18 @@ export default function MainAppBar() {
             >
               OSAL
             </Typography>
-            <Button component={Link} href="/" sx={{ color: "#ffffff", display: { xs: 'none', sm: 'block' } }}>
+            <Button
+              component={Link}
+              href="/"
+              sx={{ color: '#ffffff', display: { xs: 'none', sm: 'block' } }}
+            >
               weapon system
             </Button>
-            <Button component={Link} href="/advanced-search" sx={{ color: "#ffffff", display: { xs: 'none', sm: 'block' } }}>
+            <Button
+              component={Link}
+              href="/advanced-search"
+              sx={{ color: '#ffffff', display: { xs: 'none', sm: 'block' } }}
+            >
               Advanced Search
             </Button>
             <IconButton

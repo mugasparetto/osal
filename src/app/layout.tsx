@@ -8,8 +8,10 @@ import AppBar from '@/components/AppBar';
 
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body>
+    <html lang="en" suppressHydrationWarning style={{ height: '100%' }}>
+      <body
+        style={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+      >
         <InitColorSchemeScript attribute="class" />
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <ThemeProvider theme={theme} defaultMode="dark">
