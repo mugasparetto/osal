@@ -171,7 +171,8 @@ export default function ClientPage({ initialWeapon }: ClientPageProps) {
               <Button
                 variant="contained"
                 LinkComponent={Link}
-                href="advanced-search"
+                href="/advanced-search"
+                replace
               >
                 Advanced Search
               </Button>

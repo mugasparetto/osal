@@ -53,7 +53,7 @@ export default function Home() {
           <Button
             variant="contained"
             LinkComponent={Link}
-            href="advanced-search"
+            href="/advanced-search"
           >
             Advanced Search
           </Button>
