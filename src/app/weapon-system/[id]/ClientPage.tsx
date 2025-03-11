@@ -14,7 +14,14 @@ import MenuItem from '@mui/material/MenuItem';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import Typography from '@mui/material/Typography';
 
-import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import { useTheme } from '@mui/material/styles';
+
+import {
+  DataGrid,
+  GridColDef,
+  GridToolbarFilterButton,
+  GridToolbarQuickFilter,
+} from '@mui/x-data-grid';
 
 import { Weapon, weapons } from '@/data';
 import { archivoNarrow } from '@/theme';
@@ -28,6 +35,23 @@ const options = weapons.map((weapon) => ({
   label: weapon.title,
   id: weapon.id,
 }));
+
+function Toolbar() {
+  const theme = useTheme();
+
+  return (
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'end',
+        borderBottom: `1px solid ${theme.palette.divider}`,
+      }}
+    >
+      <GridToolbarFilterButton />
+      <GridToolbarQuickFilter sx={{ ml: 2 }} />
+    </div>
+  );
+}
 
 export default function ClientPage({ initialWeapon }: ClientPageProps) {
   const router = useRouter();
@@ -169,7 +193,14 @@ export default function ClientPage({ initialWeapon }: ClientPageProps) {
               paddingBottom: '2rem',
             }}
           >
-            <DataGrid rows={rows} columns={columns} autoPageSize />
+            <DataGrid
+              rows={rows}
+              columns={columns}
+              autoPageSize
+              slots={{
+                toolbar: Toolbar,
+              }}
+            />
           </div>
         </Grid>
       </Grid>
