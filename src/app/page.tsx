@@ -5,8 +5,11 @@ import Link from 'next/link';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid2';
+
 import { styled } from '@mui/material/styles';
+import { grey } from '@mui/material/colors';
 
 import { weapons } from '@/data';
 import { archivoNarrow } from '@/theme';
@@ -29,22 +32,37 @@ export default function Home() {
           my: 4,
         }}
       >
-        <Typography
-          variant="h4"
-          component="h1"
-          gutterBottom
+        <Box
           sx={{
-            fontFamily: archivoNarrow.style.fontFamily,
-            fontWeight: 600,
-            textTransform: 'uppercase',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            mb: 1,
           }}
         >
-          Searching by Weapon System
-        </Typography>
-        <Typography variant="body1" component="p">
+          <Typography
+            variant="h4"
+            component="h1"
+            sx={{
+              fontFamily: archivoNarrow.style.fontFamily,
+              fontWeight: 600,
+              textTransform: 'uppercase',
+            }}
+          >
+            Searching by Weapon System
+          </Typography>
+          <Button
+            variant="contained"
+            LinkComponent={Link}
+            href="advanced-search"
+          >
+            Advanced Search
+          </Button>
+        </Box>
+        <Typography variant="body1" component="p" sx={{ color: grey[700] }}>
           Choose a weapon system to explore its supply chain.
         </Typography>
-        <Typography variant="body1" component="p">
+        <Typography variant="body1" component="p" sx={{ color: grey[700] }}>
           Search by “location” if you want to learn what sub-components are made
           in your neighborhood.
         </Typography>
