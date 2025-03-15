@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -41,18 +42,19 @@ const Container = styled(Box)`
 `;
 
 interface ImageWithTitleProps {
-    weapon: Weapon;
+  weapon: Weapon;
 }
 
-
 export default function ImageWithTitle({ weapon }: ImageWithTitleProps) {
-    return (<Container>
-        <Image
-            src={weapon.image}
-            alt={weapon.title}
-            fill={true}
-            style={{ objectFit: 'cover' }}
-        />
-        <Typography variant="h6">{weapon.title}</Typography>
-    </Container>)
+  return (
+    <Container>
+      <Image
+        src={weapon.image}
+        alt={weapon.title}
+        fill={true}
+        style={{ objectFit: 'cover' }}
+      />
+      <Typography variant="h6">{weapon.title}</Typography>
+    </Container>
+  );
 }

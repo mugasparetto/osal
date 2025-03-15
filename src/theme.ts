@@ -9,8 +9,6 @@ const roboto = Roboto({
   display: 'swap',
 });
 
-export const archivoNarrow = Archivo_Narrow({ subsets: ['latin'] });
-
 const theme = createTheme({
   colorSchemes: { light: true, dark: true },
   cssVariables: {
