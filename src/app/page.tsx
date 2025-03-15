@@ -4,6 +4,8 @@ import ClientHome from './client-page';
 
 async function fetchWeapons() {
   try {
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+
     const response = await fetch('http://localhost:4000/weapons');
 
     if (!response.ok) {
