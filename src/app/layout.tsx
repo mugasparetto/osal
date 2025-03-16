@@ -5,6 +5,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import theme from '@/theme';
 import InitColorSchemeScript from '@mui/material/InitColorSchemeScript';
 import AppBar from '@/components/app-bar';
+import StoreProvider from './store-provider';
 
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
@@ -18,7 +19,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
             {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
             <CssBaseline />
             <AppBar />
-            {props.children}
+            <StoreProvider>{props.children}</StoreProvider>
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
