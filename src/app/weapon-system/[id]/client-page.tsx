@@ -25,6 +25,7 @@ import {
 } from '@mui/x-data-grid';
 
 import { Weapon } from '@/data';
+import { useAppDispatch, useAppSelector } from '@/lib/hooks';
 import ImageWithTitle from '@/components/image-with-title';
 
 interface ClientPageProps {
@@ -57,6 +58,7 @@ function Toolbar() {
 
 export default function ClientPage({ weapon }: ClientPageProps) {
   const router = useRouter();
+  const weapons = useAppSelector((state) => state.weaponsReducer.weapons);
 
   const columns: GridColDef<typeof rows[number]>[] = React.useMemo(
     () => [

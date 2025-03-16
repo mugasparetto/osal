@@ -1,9 +1,4 @@
-import * as React from 'react';
-import Grid from '@mui/material/Grid2';
-
-import { Weapon } from '@/data';
-import ImageWithTitle from '@/components/image-with-title';
-import GridItem from '@/components/weapons-grid-item';
+import WeaponsGridClient from './weapons-grid-client';
 
 async function fetchWeapons() {
   try {
@@ -25,15 +20,5 @@ async function fetchWeapons() {
 export default async function WeaponsGrid() {
   const weapons = await fetchWeapons();
 
-  return (
-    <Grid container columns={{ xs: 4, md: 12 }} spacing={3} sx={{ mb: 4 }}>
-      {weapons.map((weapon: Weapon) => (
-        <Grid key={weapon.id} size={{ xs: 4, sm: 2, md: 4, lg: 3 }}>
-          <GridItem href={`/weapon-system/${weapon.id}`}>
-            <ImageWithTitle weapon={weapon} />
-          </GridItem>
-        </Grid>
-      ))}
-    </Grid>
-  );
+  return <WeaponsGridClient fetchedWeapons={weapons} />;
 }
