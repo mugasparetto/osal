@@ -2,7 +2,7 @@ import * as React from 'react';
 import Grid from '@mui/material/Grid2';
 
 import { Weapon } from '@/data';
-import ImageWithTitle from '@/components/ImageWithTitle';
+import ImageWithTitle from '@/components/image-with-title';
 import GridItem from '@/components/weapons-grid-item';
 
 async function fetchWeapons() {

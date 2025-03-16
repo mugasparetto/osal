@@ -4,7 +4,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import theme from '@/theme';
 import InitColorSchemeScript from '@mui/material/InitColorSchemeScript';
-import AppBar from '@/components/AppBar';
+import AppBar from '@/components/app-bar';
 
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (

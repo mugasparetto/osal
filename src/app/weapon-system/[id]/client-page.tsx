@@ -25,7 +25,7 @@ import {
 
 import { Weapon, weapons } from '@/data';
 import { archivoNarrow } from '@/theme';
-import ImageWithTitle from '@/components/ImageWithTitle';
+import ImageWithTitle from '@/components/image-with-title';
 
 interface ClientPageProps {
   initialWeapon: Weapon;
