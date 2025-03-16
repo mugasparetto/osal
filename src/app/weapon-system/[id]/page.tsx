@@ -1,6 +1,23 @@
-import { fetchWeaponData } from '@/data';
-
 import ClientPage from './client-page';
+
+async function fetchWeapon(id: string) {
+  try {
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+
+    const response = await fetch(
+      `http://localhost:4000/weapons/${id}?_embed=components`
+    );
+
+    if (!response.ok) {
+      console.log(`Failed to fetch weapon: ${response.status}`);
+    }
+
+    return response.json();
+  } catch (error) {
+    console.log(error);
+    return {};
+  }
+}
 
 export default async function Page({
   params,
@@ -8,8 +25,7 @@ export default async function Page({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const weapon = fetchWeaponData(id);
+  const weapon = await fetchWeapon(id);
 
-  // Pass the fetched data as props to the client component
-  return <ClientPage initialWeapon={weapon!} />;
+  return <ClientPage weapon={weapon} />;
 }

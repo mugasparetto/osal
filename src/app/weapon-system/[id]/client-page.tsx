@@ -2,6 +2,7 @@
 import * as React from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { Archivo_Narrow } from 'next/font/google';
 
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -23,18 +24,19 @@ import {
   GridToolbarQuickFilter,
 } from '@mui/x-data-grid';
 
-import { Weapon, weapons } from '@/data';
-import { archivoNarrow } from '@/theme';
+import { Weapon } from '@/data';
 import ImageWithTitle from '@/components/image-with-title';
 
 interface ClientPageProps {
-  initialWeapon: Weapon;
+  weapon: Weapon;
 }
 
-const options = weapons.map((weapon) => ({
-  label: weapon.title,
-  id: weapon.id,
-}));
+// const options = weapons.map((weapon) => ({
+//   label: weapon.title,
+//   id: weapon.id,
+// }));
+
+const archivoNarrow = Archivo_Narrow({ subsets: ['latin'] });
 
 function Toolbar() {
   const theme = useTheme();
@@ -53,16 +55,8 @@ function Toolbar() {
   );
 }
 
-export default function ClientPage({ initialWeapon }: ClientPageProps) {
+export default function ClientPage({ weapon }: ClientPageProps) {
   const router = useRouter();
-  const [selectedWeaponId, setSelectedWeaponId] = React.useState(
-    initialWeapon.id
-  );
-
-  const selectedWeaponObject = React.useMemo(
-    () => weapons.find((weapon) => weapon.id === selectedWeaponId),
-    [selectedWeaponId]
-  );
 
   const columns: GridColDef<typeof rows[number]>[] = React.useMemo(
     () => [
@@ -96,18 +90,18 @@ export default function ClientPage({ initialWeapon }: ClientPageProps) {
 
   const rows = React.useMemo(
     () =>
-      selectedWeaponObject!.components.map((c) => ({
+      weapon.components.map((c) => ({
         id: c.id,
         component: c.title,
         country: c.country,
         companies: c.company,
         location: c.location,
       })),
-    [selectedWeaponObject]
+    [weapon]
   );
 
   const handleChange = React.useCallback((event: SelectChangeEvent) => {
-    setSelectedWeaponId(event.target.value as string);
+    // setSelectedWeaponId(event.target.value as string);
 
     // Update the URL with the new parameter without refreshing the page
     router.push('/weapon-system/' + event.target.value);
@@ -130,21 +124,21 @@ export default function ClientPage({ initialWeapon }: ClientPageProps) {
           <Box sx={{ position: 'sticky', top: '1rem' }}>
             <FormControl fullWidth>
               <Select
-                value={selectedWeaponId}
+                value={weapon.id}
                 onChange={handleChange}
                 displayEmpty={false}
               >
-                {options.map((o) => (
+                {/* {options.map((o) => (
                   <MenuItem value={o.id} key={o.id}>
                     {o.label}
                   </MenuItem>
-                ))}
+                ))} */}
               </Select>
             </FormControl>
 
             <Card variant="outlined" sx={{ mt: 3 }}>
-              <ImageWithTitle weapon={selectedWeaponObject!} />
-              <CardContent>{selectedWeaponObject?.description}</CardContent>
+              <ImageWithTitle weapon={weapon} />
+              <CardContent>{weapon.description}</CardContent>
             </Card>
           </Box>
         </Grid>
