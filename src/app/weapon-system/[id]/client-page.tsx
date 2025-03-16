@@ -1,5 +1,5 @@
 'use client';
-import * as React from 'react';
+import { useMemo, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Archivo_Narrow } from 'next/font/google';
@@ -32,11 +32,6 @@ interface ClientPageProps {
   weapon: Weapon;
 }
 
-// const options = weapons.map((weapon) => ({
-//   label: weapon.title,
-//   id: weapon.id,
-// }));
-
 const archivoNarrow = Archivo_Narrow({ subsets: ['latin'] });
 
 function Toolbar() {
@@ -60,7 +55,16 @@ export default function ClientPage({ weapon }: ClientPageProps) {
   const router = useRouter();
   const weapons = useAppSelector((state) => state.weaponsReducer.weapons);
 
-  const columns: GridColDef<typeof rows[number]>[] = React.useMemo(
+  const options = useMemo(
+    () =>
+      weapons.map((weapon) => ({
+        label: weapon.title,
+        id: weapon.id,
+      })),
+    []
+  );
+
+  const columns: GridColDef<typeof rows[number]>[] = useMemo(
     () => [
       {
         field: 'component',
@@ -90,7 +94,7 @@ export default function ClientPage({ weapon }: ClientPageProps) {
     []
   );
 
-  const rows = React.useMemo(
+  const rows = useMemo(
     () =>
       weapon.components.map((c) => ({
         id: c.id,
@@ -102,10 +106,7 @@ export default function ClientPage({ weapon }: ClientPageProps) {
     [weapon]
   );
 
-  const handleChange = React.useCallback((event: SelectChangeEvent) => {
-    // setSelectedWeaponId(event.target.value as string);
-
-    // Update the URL with the new parameter without refreshing the page
+  const handleChange = useCallback((event: SelectChangeEvent) => {
     router.push('/weapon-system/' + event.target.value);
   }, []);
 
@@ -130,11 +131,11 @@ export default function ClientPage({ weapon }: ClientPageProps) {
                 onChange={handleChange}
                 displayEmpty={false}
               >
-                {/* {options.map((o) => (
+                {options.map((o) => (
                   <MenuItem value={o.id} key={o.id}>
                     {o.label}
                   </MenuItem>
-                ))} */}
+                ))}
               </Select>
             </FormControl>
 
