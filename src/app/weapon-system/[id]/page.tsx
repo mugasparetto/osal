@@ -1,31 +1,18 @@
+import { Suspense } from 'react';
+import Link from 'next/link';
+import { Archivo_Narrow } from 'next/font/google';
+
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid2';
 import Typography from '@mui/material/Typography';
 
-import ClientPage from './client-page';
-import ImageWithTitle from '@/components/image-with-title';
 import WeaponsSelect from '@/components/weapons-select';
+import ComponentsTable from '@/components/components-table';
+import ComponentsTableSkeleton from '@/components/data-table-skeleton';
 
-async function fetchWeapon(id: string) {
-  try {
-    await new Promise((resolve) => setTimeout(resolve, 3000));
-
-    const response = await fetch(
-      `http://localhost:4000/weapons/${id}?_embed=components`
-    );
-
-    if (!response.ok) {
-      console.log(`Failed to fetch weapon: ${response.status}`);
-    }
-
-    return response.json();
-  } catch (error) {
-    console.log(error);
-    return {};
-  }
-}
+const archivoNarrow = Archivo_Narrow({ subsets: ['latin'] });
 
 export default async function Page({
   params,
@@ -35,7 +22,6 @@ export default async function Page({
   const { id } = await params;
   // const weapon = await fetchWeapon(id);
 
-  // return <ClientPage weapon={weapon} />;
   return (
     <Container
       maxWidth={false}
@@ -53,6 +39,56 @@ export default async function Page({
           <Box sx={{ position: 'sticky', top: '1rem' }}>
             <WeaponsSelect weaponId={id} />
           </Box>
+        </Grid>
+        <Grid size={8} sx={{ display: 'flex', flexDirection: 'column' }}>
+          <Box sx={{ mb: 3 }}>
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                mb: 1,
+              }}
+            >
+              <Typography
+                variant="h5"
+                sx={{
+                  fontFamily: archivoNarrow.style.fontFamily,
+                  fontWeight: 600,
+                  textTransform: 'uppercase',
+                }}
+              >
+                Searching by Weapon System
+              </Typography>
+              <Button
+                variant="contained"
+                LinkComponent={Link}
+                href="/advanced-search"
+                replace
+              >
+                Advanced Search
+              </Button>
+            </Box>
+            <Typography variant="body2" component="p">
+              Choose a weapon system to explore its supply chain.
+            </Typography>
+            <Typography variant="body2" component="p">
+              Search by “location” if you want to learn what sub-components are
+              made in your neighborhood.
+            </Typography>
+          </Box>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              flexGrow: 1,
+              paddingBottom: '2rem',
+            }}
+          >
+            <Suspense fallback={<ComponentsTableSkeleton />}>
+              <ComponentsTable weaponId={id} />
+            </Suspense>
+          </div>
         </Grid>
       </Grid>
     </Container>
