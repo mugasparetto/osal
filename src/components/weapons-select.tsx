@@ -1,5 +1,5 @@
 'use client';
-import { useCallback, useMemo } from 'react';
+import { useCallback, useMemo, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
 import FormControl from '@mui/material/FormControl';
@@ -9,12 +9,29 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 
 import { useAppDispatch, useAppSelector } from '@/lib/hooks';
-import { Weapon } from '@/data';
+import { setWeapons } from '@/lib/weapons-slice';
+import { fetchWeapons } from '@/lib/services';
 import ImageWithTitle from '@/components/image-with-title';
 
 export default function WeaponsSelect({ weaponId }: { weaponId: string }) {
   const router = useRouter();
+  const dispatch = useAppDispatch();
   const weapons = useAppSelector((state) => state.weaponsReducer.weapons);
+  const fetchStatus = useAppSelector(
+    (state) => state.weaponsReducer.fetchStatus
+  );
+
+  useEffect(() => {
+    if (fetchStatus === 'not-loaded') {
+      fetchWeapons()
+        .then((result) => {
+          dispatch(setWeapons(result));
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  }, [fetchStatus]);
 
   const weapon = useMemo(() => {
     return weapons.find((w) => w.id === weaponId);
