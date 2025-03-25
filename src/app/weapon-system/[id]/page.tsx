@@ -20,7 +20,6 @@ export default async function Page({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  // const weapon = await fetchWeapon(id);
 
   return (
     <Container
@@ -28,7 +27,12 @@ export default async function Page({
       sx={{ mt: 4, flexGrow: 1, display: 'flex', boxSizing: 'border-box' }}
       component="main"
     >
-      <Grid container columns={{ xs: 4, md: 12 }} spacing={3}>
+      <Grid
+        container
+        columns={{ xs: 4, md: 12 }}
+        spacing={3}
+        sx={{ flexGrow: 1 }}
+      >
         <Grid
           size={4}
           padding={2}

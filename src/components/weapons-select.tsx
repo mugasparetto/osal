@@ -18,7 +18,7 @@ export default function WeaponsSelect({ weaponId }: { weaponId: string }) {
 
   const weapon = useMemo(() => {
     return weapons.find((w) => w.id === weaponId);
-  }, []);
+  }, [weapons]);
 
   const options = useMemo(
     () =>
@@ -26,7 +26,7 @@ export default function WeaponsSelect({ weaponId }: { weaponId: string }) {
         label: weapon.title,
         id: weapon.id,
       })),
-    []
+    [weapons]
   );
 
   const handleChange = useCallback((event: SelectChangeEvent) => {
@@ -44,10 +44,14 @@ export default function WeaponsSelect({ weaponId }: { weaponId: string }) {
           ))}
         </Select>
       </FormControl>
-      <Card variant="outlined" sx={{ mt: 3 }}>
-        <ImageWithTitle weapon={weapon!} />
-        <CardContent>{weapon!.description}</CardContent>
-      </Card>
+      {weapon ? (
+        <Card variant="outlined" sx={{ mt: 3 }}>
+          <ImageWithTitle weapon={weapon!} />
+          <CardContent>{weapon!.description}</CardContent>
+        </Card>
+      ) : (
+        <div />
+      )}
     </>
   );
 }
