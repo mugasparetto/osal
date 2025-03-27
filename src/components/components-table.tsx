@@ -6,7 +6,11 @@ export default async function ComponentsTable({
 }: {
   weaponId: string;
 }) {
-  const { components } = await fetchComponents(weaponId);
+  try {
+    const { components } = await fetchComponents(weaponId);
 
-  return <ComponentsTableClient components={components} />;
+    return <ComponentsTableClient components={components} />;
+  } catch (error) {
+    throw error;
+  }
 }

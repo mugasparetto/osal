@@ -25,12 +25,12 @@ export async function fetchComponents(weaponId: string) {
     );
 
     if (!response.ok) {
-      console.log(`Failed to fetch weapon: ${response.status}`);
+      console.log(`Failed to fetch components: ${response.status}`);
+      throw Error('404');
     }
 
     return response.json();
   } catch (error) {
-    console.log(error);
-    return {};
+    throw error;
   }
 }
