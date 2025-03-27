@@ -12,8 +12,7 @@ export async function fetchWeapons() {
 
     return response.json();
   } catch (error) {
-    console.log(error);
-    return [];
+    throw error;
   }
 }
 
