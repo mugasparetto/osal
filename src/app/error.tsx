@@ -74,7 +74,7 @@ export default function Error({
         <Typography variant="h6">
           Please try again or contact an admin.
         </Typography>
-        <Button variant="outlined" sx={{ mt: 2 }}>
+        <Button variant="outlined" sx={{ mt: 2 }} onClick={reset}>
           Reload
         </Button>
       </Box>
