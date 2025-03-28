@@ -1,10 +1,11 @@
 'use client';
 import { useMemo } from 'react';
+import { useRouter } from 'next/navigation';
 import {
   DataGrid,
-  GridColDef,
   GridToolbarFilterButton,
   GridToolbarQuickFilter,
+  gridClasses,
 } from '@mui/x-data-grid';
 
 import { useTheme } from '@mui/material/styles';
@@ -60,6 +61,7 @@ export default function ComponentsTableClient({
 }: {
   components: Component[];
 }) {
+  const router = useRouter();
   const rows = useMemo(
     () =>
       components.map((c) => ({
@@ -79,6 +81,18 @@ export default function ComponentsTableClient({
       autoPageSize
       slots={{
         toolbar: Toolbar,
+      }}
+      sx={{
+        [`& .${gridClasses.cell}:focus, & .${gridClasses.cell}:focus-within`]: {
+          outline: 'none',
+        },
+        [`& .${gridClasses.columnHeader}:focus, & .${gridClasses.columnHeader}:focus-within`]: {
+          outline: 'none',
+        },
+      }}
+      disableRowSelectionOnClick
+      onRowClick={(params) => {
+        router.push(`/component/${params.id}`);
       }}
     />
   );
