@@ -29,7 +29,12 @@ export default function MainAppBar() {
 
   return (
     <Box>
-      <AppBar position="static" component="nav" enableColorOnDark>
+      <AppBar
+        position="static"
+        component="nav"
+        enableColorOnDark
+        sx={{ boxShadow: 'none' }}
+      >
         <Toolbar>
           <Typography
             variant="h6"
