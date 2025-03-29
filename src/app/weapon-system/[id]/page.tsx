@@ -68,7 +68,6 @@ export default async function Page({
                 variant="contained"
                 LinkComponent={Link}
                 href="/advanced-search"
-                replace
               >
                 Advanced Search
               </Button>
