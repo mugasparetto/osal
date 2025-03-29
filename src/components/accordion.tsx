@@ -13,10 +13,10 @@ import { styled } from '@mui/material/styles';
 const Accordion = styled((props: AccordionProps) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
-  marginLeft: '1px',
+  marginLeft: '2px',
   borderBottom: `1px solid ${theme.palette.divider}`,
   '&:not(:last-child)': {
-    borderBottom: 0,
+    // borderBottom: 0,
   },
   '&::before': {
     display: 'none',

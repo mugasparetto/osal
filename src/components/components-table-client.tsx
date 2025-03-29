@@ -89,6 +89,7 @@ export default function ComponentsTableClient({
         [`& .${gridClasses.columnHeader}:focus, & .${gridClasses.columnHeader}:focus-within`]: {
           outline: 'none',
         },
+        [`& .${gridClasses.row}`]: { cursor: "pointer" }
       }}
       disableRowSelectionOnClick
       onRowClick={(params) => {
