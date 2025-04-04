@@ -48,6 +48,14 @@ export default function ComponentHeader() {
             vertical: 'top',
             horizontal: 'right',
           }}
+          elevation={0}
+          sx={{
+            ['& .MuiPaper-root']: {
+              borderWidth: 1,
+              borderStyle: 'solid',
+              borderColor: 'divider',
+            },
+          }}
         >
           {options.map((option) => (
             <MenuItem
