@@ -1,5 +1,6 @@
 'use client';
 import { useState, useCallback } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
@@ -9,10 +10,17 @@ import MenuItem from '@mui/material/MenuItem';
 import SubdirectoryArrowRightIcon from '@mui/icons-material/SubdirectoryArrowRight';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
+interface ComponentHeaderProps {
+  variation: string;
+}
+
 const options = ['Variation 1', 'Variation 2', 'Variation 3'];
 
-export default function ComponentHeader() {
+export default function ComponentHeader({ variation }: ComponentHeaderProps) {
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [selectedIndex, setSelectedIndex] = useState(parseInt(variation) - 1);
   const open = Boolean(anchorEl);
   const handleClick = useCallback((event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -20,6 +28,18 @@ export default function ComponentHeader() {
   const handleClose = useCallback(() => {
     setAnchorEl(null);
   }, []);
+
+  const handleMenuItemClick = useCallback(
+    (event: React.MouseEvent<HTMLElement>, index: number) => {
+      setSelectedIndex(index);
+      const current = new URLSearchParams(Array.from(searchParams.entries()));
+      current.set('variation', `${index + 1}`);
+
+      router.push(`?${current.toString()}`);
+      setAnchorEl(null);
+    },
+    []
+  );
 
   return (
     <Stack>
@@ -57,11 +77,11 @@ export default function ComponentHeader() {
             },
           }}
         >
-          {options.map((option) => (
+          {options.map((option, index) => (
             <MenuItem
               key={option}
-              selected={option === 'Variation 1'}
-              onClick={handleClose}
+              selected={index === selectedIndex}
+              onClick={(event) => handleMenuItemClick(event, index)}
             >
               {option}
             </MenuItem>

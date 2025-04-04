@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { redirect } from 'next/navigation';
 
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -16,12 +17,22 @@ import ComponentChild from '@/components/component-child';
 
 const children = ['Spring', 'Sensor', 'Fin'];
 
-export default async function Page({
-  params,
-}: {
+interface PageProps {
   params: Promise<{ id: string }>;
-}) {
+  searchParams: Promise<{ variation: string }>;
+}
+
+export default async function Page({ params, searchParams }: PageProps) {
   const { id } = await params;
+  const { variation } = await searchParams;
+
+  if (variation == null) {
+    const updatedParams = new URLSearchParams({
+      variation: '1',
+    });
+
+    redirect(`?${updatedParams.toString()}`);
+  }
 
   return (
     <Container
@@ -116,7 +127,7 @@ export default async function Page({
           paddingLeft={0}
           paddingRight={0}
         >
-          <ComponentHeader />
+          <ComponentHeader variation={variation} />
           <Stack sx={{ color: 'text.secondary', mt: 3 }} gap={4}>
             <Box>
               <Typography sx={{ fontSize: 20, color: 'text.primary' }}>
