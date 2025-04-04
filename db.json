@@ -347,5 +347,62 @@
       "location": "Placeholder",
       "weaponId": "12"
     }
+  ],
+  "componentDetails": [
+    {
+      "id": "1",
+      "name": "Warhead",
+      "country": "Israel, Ukraine",
+      "description": "An advanced missile defense system developed by Israel to intercept short-range rockets and artillery shells. It has been credited with intercepting thousands of incoming projectiles.",
+      "parent": "Hellfire Missile",
+      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin semper maximus convallis. Sed accumsan maximus lectus et tincidunt. Etiam venenatis dolor.",
+      "sources": [
+        "www.google.com/source",
+        "www.google.com/source",
+        "www.google.com/source",
+        "www.google.com/source"
+      ],
+      "price": "$1.9B [1]",
+      "usage": {
+        "event": "Massacre in refugee camp on June 25 2023, killing of four doctors in a hospital in northern Gaza. Massacre in school in September 7, 2024. [2]",
+        "source": "guadian.com/link"
+      },
+      "contract": {
+        "country": "United States",
+        "company": "Lockeed Martin"
+      },
+      "fabrication": {
+        "primary": "Warhead",
+        "country": "United States",
+        "company": "Lockheed Martin Campus 4",
+        "parent": null,
+        "location": "2989 Street Town Road, Newark , NJ",
+        "address": "2989 Street Town Road, Newark , NJ",
+        "lat-long": "384789348274, 238482374"
+      },
+      "children": [
+        {
+          "name": "Spring",
+          "company": "Lockheed Martin Campus 4",
+          "location": "2989 Street Town Road, Newark , NJ",
+          "address": "2989 Street Town Road, Newark , NJ",
+          "lat-long": null
+        },
+        {
+          "name": "Sensor",
+          "company": null,
+          "location": "2989 Street Town Road, Newark , NJ",
+          "address": "2989 Street Town Road, Newark , NJ",
+          "lat-long": "384789348274, 238482374"
+        },
+        {
+          "name": "Fin",
+          "company": "Lockheed Martin Campus 4",
+          "location": "2989 Street Town Road, Newark , NJ",
+          "address": "2989 Street Town Road, Newark , NJ",
+          "lat-long": null
+        }
+      ]
+    }
   ]
 }

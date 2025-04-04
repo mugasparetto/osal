@@ -14,6 +14,7 @@ import Stack from '@mui/material/Stack';
 import ComponentHeader from '@/components/component-header';
 import Accordion from '@/components/accordion';
 import ComponentChild from '@/components/component-child';
+import { fetchComponentDetails } from '@/lib/services';
 
 const children = ['Spring', 'Sensor', 'Fin'];
 
@@ -33,6 +34,9 @@ export default async function Page({ params, searchParams }: PageProps) {
 
     redirect(`?${updatedParams.toString()}`);
   }
+
+  const detail = await fetchComponentDetails();
+  console.log(detail);
 
   return (
     <Container

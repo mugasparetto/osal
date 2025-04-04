@@ -34,3 +34,20 @@ export async function fetchComponents(weaponId: string) {
     throw error;
   }
 }
+
+export async function fetchComponentDetails() {
+  try {
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+
+    const response = await fetch(`http://localhost:4000/componentDetails/1`);
+
+    if (!response.ok) {
+      console.log(`Failed to fetch component details: ${response.status}`);
+      throw Error('404');
+    }
+
+    return response.json();
+  } catch (error) {
+    throw error;
+  }
+}
