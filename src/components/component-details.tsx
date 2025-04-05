@@ -22,8 +22,6 @@ interface ComponentDetailProps {
   variation: string;
 }
 
-const children = ['Spring', 'Sensor', 'Fin'];
-
 export default async function ComponentDetail({
   id,
   variation,
@@ -43,11 +41,8 @@ export default async function ComponentDetail({
         component="main"
       >
         <Grid container columns={12} spacing={3} sx={{ flexGrow: 1 }}>
-          <Grid size={4} sx={{ p: 2, pt: 0, pl: 0, position: 'relative' }}>
-            <Stack
-              gap={2}
-              sx={{ color: 'text.secondary', position: 'absolute' }}
-            >
+          <Grid size={4} sx={{ pr: 1 }}>
+            <Stack gap={2} sx={{ color: 'text.secondary' }}>
               <Box
                 sx={{
                   display: 'block',
