@@ -378,7 +378,7 @@
         "parent": null,
         "location": "2989 Street Town Road, Newark , NJ",
         "address": "2989 Street Town Road, Newark , NJ",
-        "lat-long": "384789348274, 238482374"
+        "lat_long": "384789348274, 238482374"
       },
       "children": [
         {
@@ -386,21 +386,21 @@
           "company": "Lockheed Martin Campus 4",
           "location": "2989 Street Town Road, Newark , NJ",
           "address": "2989 Street Town Road, Newark , NJ",
-          "lat-long": null
+          "lat_long": null
         },
         {
           "name": "Sensor",
           "company": null,
           "location": "2989 Street Town Road, Newark , NJ",
           "address": "2989 Street Town Road, Newark , NJ",
-          "lat-long": "384789348274, 238482374"
+          "lat_long": "384789348274, 238482374"
         },
         {
           "name": "Fin",
           "company": "Lockheed Martin Campus 4",
           "location": "2989 Street Town Road, Newark , NJ",
           "address": "2989 Street Town Road, Newark , NJ",
-          "lat-long": null
+          "lat_long": null
         }
       ]
     }

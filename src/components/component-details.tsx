@@ -13,6 +13,7 @@ import Stack from '@mui/material/Stack';
 import ComponentHeader from '@/components/component-header';
 import Accordion from '@/components/accordion';
 import ComponentChild from '@/components/component-child';
+import { Children } from '@/data';
 
 import { fetchComponentDetails } from '@/lib/services';
 
@@ -65,26 +66,18 @@ export default async function ComponentDetail({
                 />
               </Box>
 
-              <Typography>
-                An advanced missile defense system developed by Israel to
-                intercept short-range rockets and artillery shells. It has been
-                credited with intercepting thousands of incoming projectiles.
-              </Typography>
+              <Typography>{details.description}</Typography>
               <Box>
                 <Typography>
                   <strong>Direct parent</strong>
                 </Typography>
-                <Typography>Hellfire Missile</Typography>
+                <Typography>{details.parent}</Typography>
               </Box>
               <Box>
                 <Typography>
                   <strong>Notes</strong>
                 </Typography>
-                <Typography>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                  semper maximus convallis. Sed accumsan maximus lectus et
-                  tincidunt. Etiam venenatis dolor.
-                </Typography>
+                <Typography>{details.notes}</Typography>
               </Box>
               <Box>
                 <Typography>
@@ -103,18 +96,13 @@ export default async function ComponentDetail({
                     },
                   }}
                 >
-                  <li>
-                    <MUILink href="#">www.google.com/source</MUILink>
-                  </li>
-                  <li>
-                    <MUILink href="#">www.google.com/source</MUILink>
-                  </li>
-                  <li>
-                    <MUILink href="#">www.google.com/source</MUILink>
-                  </li>
-                  <li>
-                    <MUILink href="#">www.google.com/source</MUILink>
-                  </li>
+                  {details.sources.map((s: string, index: number) => (
+                    <li>
+                      <MUILink key={index} href="#">
+                        {s}
+                      </MUILink>
+                    </li>
+                  ))}
                 </Typography>
               </Box>
             </Stack>
@@ -126,17 +114,21 @@ export default async function ComponentDetail({
             paddingLeft={0}
             paddingRight={0}
           >
-            <ComponentHeader variation={variation} />
+            <ComponentHeader
+              variation={variation}
+              name={details.name}
+              parent={details.parent}
+            />
             <Stack sx={{ color: 'text.secondary', mt: 3 }} gap={4}>
               <Box>
                 <Typography sx={{ fontSize: 20, color: 'text.primary' }}>
                   Item Group
                 </Typography>
                 <Typography>
-                  <strong>Name:</strong> Warhead
+                  <strong>Name:</strong> {details.name}
                 </Typography>
                 <Typography>
-                  <strong>Country Usage:</strong> Israel, Ukraine
+                  <strong>Country Usage:</strong> {details.country}
                 </Typography>
               </Box>
               <Box>
@@ -144,7 +136,7 @@ export default async function ComponentDetail({
                   Price
                 </Typography>
                 <Typography>
-                  <strong>Price:</strong> $1.9B [1]
+                  <strong>Price:</strong> {details.price}
                 </Typography>
               </Box>
               <Box>
@@ -152,12 +144,10 @@ export default async function ComponentDetail({
                   Usage
                 </Typography>
                 <Typography>
-                  <strong>Event:</strong> Massacre in refugee camp on June 25
-                  2023, killing of four doctors in a hospital in northern Gaza.
-                  Massacre in school in September 7, 2024. [2]
+                  <strong>Event:</strong> {details.usage.event}
                 </Typography>
                 <Typography>
-                  <strong>Source:</strong> guadian.com/link
+                  <strong>Source:</strong> {details.usage.source}
                 </Typography>
               </Box>
               <Box>
@@ -165,10 +155,10 @@ export default async function ComponentDetail({
                   Contract Company
                 </Typography>
                 <Typography>
-                  <strong>Country:</strong> United States
+                  <strong>Country:</strong> {details.contract.country}
                 </Typography>
                 <Typography>
-                  <strong>Company:</strong> Lockeed Martin
+                  <strong>Company:</strong> {details.contract.company}
                 </Typography>
               </Box>
               <Box>
@@ -176,28 +166,29 @@ export default async function ComponentDetail({
                   Fabrication and Assembly
                 </Typography>
                 <Typography>
-                  <strong>Primary:</strong> Warhead Assembly
+                  <strong>Primary:</strong> {details.fabrication.primary}{' '}
+                  Assembly
                 </Typography>
                 <Typography>
-                  <strong>Country:</strong> United States
+                  <strong>Country:</strong> {details.fabrication.country}
                 </Typography>
                 <Typography>
-                  <strong>Company:</strong> Lockheed Martin Campus 4
+                  <strong>Company:</strong> {details.fabrication.company}
                 </Typography>
                 <Typography>
-                  <strong>Parent:</strong> None
+                  <strong>Parent:</strong> {details.fabrication.parent}
                 </Typography>
                 <Typography>
-                  <strong>Given Location:</strong> 2989 Street Town Road, Newark
-                  , NJ
+                  <strong>Given Location:</strong>{' '}
+                  {details.fabrication.location}
                 </Typography>
                 <Typography>
-                  <strong>Canonical Address:</strong> 2989 Street Town Road,
-                  Newark , NJ
+                  <strong>Canonical Address:</strong>{' '}
+                  {details.fabrication.address}
                 </Typography>
                 <Typography>
-                  <strong>Latitude and Longitude:</strong> 384789348274,
-                  238482374
+                  <strong>Latitude and Longitude:</strong>{' '}
+                  {details.fabrication.lat_long}
                 </Typography>
               </Box>
             </Stack>
@@ -208,7 +199,7 @@ export default async function ComponentDetail({
               </Typography>
             </Box>
             <Stack sx={{ color: 'text.secondary', mb: 3 }} gap={4}>
-              {children.map((child) => (
+              {details.children.map((child: Children) => (
                 <ComponentChild child={child} />
               ))}
             </Stack>

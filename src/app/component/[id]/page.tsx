@@ -22,7 +22,7 @@ export default async function Page({ params, searchParams }: PageProps) {
   }
 
   return (
-    <Suspense fallback={<ComponentSkeleton />}>
+    <Suspense key={variation} fallback={<ComponentSkeleton />}>
       <ComponentDetails id={id} variation={variation} />
     </Suspense>
   );

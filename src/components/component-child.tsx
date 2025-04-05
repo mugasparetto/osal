@@ -6,8 +6,10 @@ import IconButton from '@mui/material/IconButton';
 import Popover from '@mui/material/Popover';
 import Typography from '@mui/material/Typography';
 
+import { Children } from '@/data';
+
 interface ComponentChildProps {
-  child: string;
+  child: Children;
 }
 
 export default function ComponentChild({ child }: ComponentChildProps) {
@@ -59,19 +61,19 @@ export default function ComponentChild({ child }: ComponentChildProps) {
         </Typography>
       </Popover>
       <Typography>
-        <strong>Direct Child:</strong> {child}
+        <strong>Direct Child:</strong> {child.name}
       </Typography>
       <Typography>
-        <strong>Company:</strong> Lockheed Martin Campus 4
+        <strong>Company:</strong> {child.company}
       </Typography>
       <Typography>
-        <strong>Given Location:</strong> 2989 Street Town Road, Newark , NJ
+        <strong>Given Location:</strong> {child.location}
       </Typography>
       <Typography>
-        <strong>Canonical Address:</strong> 2989 Street Town Road, Newark , NJ
+        <strong>Canonical Address:</strong> {child.address}
       </Typography>
       <Typography>
-        <strong>Latitude and Longitude:</strong> 384789348274, 238482374
+        <strong>Latitude and Longitude:</strong> {child.lat_long}
       </Typography>
     </Box>
   );

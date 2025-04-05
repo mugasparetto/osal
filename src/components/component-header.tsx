@@ -12,11 +12,17 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 interface ComponentHeaderProps {
   variation: string;
+  name: string;
+  parent: string;
 }
 
 const options = ['Variation 1', 'Variation 2', 'Variation 3'];
 
-export default function ComponentHeader({ variation }: ComponentHeaderProps) {
+export default function ComponentHeader({
+  variation,
+  name,
+  parent,
+}: ComponentHeaderProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -44,19 +50,17 @@ export default function ComponentHeader({ variation }: ComponentHeaderProps) {
   return (
     <Stack>
       <Typography sx={{ fontSize: 20, color: 'text.secondary' }}>
-        Hellfire Missile
+        {parent}
       </Typography>
-      <Stack direction="row">
+      <Stack direction="row" sx={{ alignItems: 'start' }}>
         <SubdirectoryArrowRightIcon sx={{ fontSize: 30 }} />
-        <Typography variant="h4">Warhead variation 1</Typography>
+        <Typography variant="h4">
+          {name} variation {variation}
+        </Typography>
         <IconButton sx={{ marginLeft: 'auto' }} onClick={handleClick}>
           <MoreVertIcon sx={{ color: 'text.primary' }} />
         </IconButton>
         <Menu
-          id="long-menu"
-          MenuListProps={{
-            'aria-labelledby': 'long-button',
-          }}
           anchorEl={anchorEl}
           open={open}
           onClose={handleClose}
